@@ -14,6 +14,7 @@
   width: 7px;
   height: 3px;
   border-radius: 2px;
+  display: none;
 }
 .main-scrollbar::-webkit-scrollbar-track {
   @apply bg-transparent;
@@ -25,7 +26,7 @@
 .forcast-scrollbar::-webkit-scrollbar {
   background-color: transparent;
   width: 10px;
-  height: 13px;
+  height: 10px;
   border-radius: 5px;
 }
 .forcast-scrollbar::-webkit-scrollbar-track {

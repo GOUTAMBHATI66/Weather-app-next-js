@@ -1,22 +1,47 @@
 import React from "react";
+import ForcastWeatherIcon from "./ForcastWeatherIcon";
+import { HiMiniArrowSmallUp, HiMiniArrowSmallDown } from "react-icons/hi2";
 
-type Props = {};
+interface forcastDesc {
+  day: string;
+  weatherType: string;
+  weatherIcon: string;
+  minTemp: number;
+  maxTemp: number;
+}
 
-const ForcastDesc = (props: Props) => {
+const ForcastDesc = ({
+  day,
+  weatherIcon,
+  weatherType,
+  minTemp,
+  maxTemp,
+}: forcastDesc) => {
   return (
     <div className="flex flex-col items-center justify-center gap-2 min-w-[140px] bg-blue-100 rounded-lg p-2 ">
       <h1>
-        Sat <span> (Clouds)</span>
+        {day} <span> ({weatherType})</span>
       </h1>
-      <div className="w-[50px] h-[50px] overflow-hidden">
-        <img
-          src="https://lordicon.com/icons/wired/lineal/812-wind.svg"
-          className="block w-full h-full"
-        />
+      {/* <WeatherIcon /> */}
+      <ForcastWeatherIcon iconName={weatherIcon} />
+      <div className="flex gap-2">
+        <span className="whitespace-nowrap relative">
+          {" "}
+          <HiMiniArrowSmallUp
+            size={24}
+            className=" inline-block absolute right-8 "
+          />{" "}
+          {maxTemp}
+          &#x2103;
+        </span>
+        <span className="text-gray-400 whitespace-nowrap relative">
+          {minTemp}&#x2103;{" "}
+          <HiMiniArrowSmallDown
+            size={24}
+            className=" inline-block absolute left-8"
+          />{" "}
+        </span>
       </div>
-      <p>
-        45*C <span className="text-gray-400"> 32*C</span>
-      </p>
     </div>
   );
 };
