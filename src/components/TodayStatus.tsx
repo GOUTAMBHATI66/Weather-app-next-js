@@ -17,7 +17,9 @@ export interface WeatherDetails {
 export default function TodayStatus(props: WeatherDetails) {
   return (
     <div className="flex flex-col gap-5 w-full h-full px-4 lg:px-10 py-5">
-      <h1 className="text-xl font-sans font-semibold">Today's Highlights</h1>
+      <h1 className="text-xl font-sans font-semibold">
+        Today&apos;s Highlights
+      </h1>
       <div className=" grid grid-cols-2 min-[800px]:grid-cols-3 gap-x-4 gap-y-2">
         <TodayStatusDesc
           icon={<LuEye />}
