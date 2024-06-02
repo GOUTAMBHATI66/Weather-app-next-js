@@ -16,7 +16,7 @@ export default function SearchBox(props: Props) {
       <input
         value={props.value}
         onChange={props.onChange}
-        className="px-4 py-2 w-5/6 h-full rounded-l-full outline-none "
+        className="px-4 py-2 w-5/6 h-full max-[450px]:text-sm max-[450px]:px-2 rounded-l-full outline-none "
         type="text"
         placeholder="search for place..."
       />

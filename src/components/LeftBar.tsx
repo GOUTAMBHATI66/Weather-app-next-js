@@ -7,7 +7,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { RiBarChartHorizontalLine } from "react-icons/ri";
+import { TiWeatherCloudy } from "react-icons/ti";
 import BarForcastDesc from "./BarForcastDesc";
 import { format, parseISO } from "date-fns";
 import { kelvinToCelsius } from "@/utils/kelvinToCelsius";
@@ -16,7 +16,7 @@ interface arrayList {
   arrayList: any[];
 }
 
-export default function RightSideBar({ arrayList }: arrayList) {
+export default function LeftBar({ arrayList }: arrayList) {
   // Unique date from 3 hours time difference
   const uniqueDates = [
     ...new Set(
@@ -40,8 +40,8 @@ export default function RightSideBar({ arrayList }: arrayList) {
   return (
     <Sheet>
       <SheetTrigger>
-        <RiBarChartHorizontalLine
-          size={32}
+        <TiWeatherCloudy
+          size={36}
           className="text-start p-1 hover:rounded-full hover:bg-[#b2bbca] sm:hidden "
         />
       </SheetTrigger>

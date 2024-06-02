@@ -12,7 +12,8 @@ import { convertWindSpeed } from "@/utils/convertWindSpeed";
 import WeatherIcon from "@/components/WeatherIcon";
 import { MakeImageFromIcon } from "@/utils/MakeImageFromIcon";
 import SearchBox from "@/components/SearchBox";
-import RightSideBar from "@/components/RightSighBar";
+import LeftBar from "@/components/LeftBar";
+import RightBar from "@/components/RightBar";
 
 interface WeatherResponse {
   cod: string;
@@ -126,12 +127,26 @@ export default function Home() {
         {/* side bar */}
         <section className="flex flex-col items-center gap-5 max-sm:w-full w-[400px] xl:w-[500px] lg:h-screen bg-slate-200 rounded-l-3xl px-4 lg:px-8 py-5 ">
           {/* search functionality */}
-          <div className="flex items-center gap-5 w-full max-sm:h-16 h-9 ">
-            <RightSideBar arrayList={data?.list} />
+          <div className="flex items-center gap-3 w-full max-sm:h-16 h-9 ">
+            <LeftBar arrayList={data?.list} />
             <SearchBox
               value={city}
               onChange={(e) => handleOnChange(e.target.value)}
               onSubmit={handleSubmitSearch}
+            />
+            <RightBar
+              visibility={meterToKm(firstData?.visibility ?? 10000)}
+              airPressure={`${firstData?.main.pressure} hPa`}
+              humidity={`${firstData?.main.humidity}%`}
+              windSpeed={convertWindSpeed(firstData?.wind.speed ?? 3.97)}
+              sunrise={format(
+                fromUnixTime(data?.city.sunrise ?? 1717199622),
+                "hh:mm"
+              )}
+              sunset={format(
+                fromUnixTime(data?.city.sunset ?? 1717249477),
+                "hh:mm"
+              )}
             />
           </div>
 
