@@ -4,10 +4,10 @@ import ForcastDesc from "./ForcastDesc";
 import { format, parseISO } from "date-fns";
 
 interface arrayList {
-  arrayList: string[];
+  arrayList: any[];
 }
 
-export default function Forcast({ arrayList }: data) {
+export default function Forcast({ arrayList }: arrayList) {
   // Unique date from 3 hours time difference
   const uniqueDates = [
     ...new Set(

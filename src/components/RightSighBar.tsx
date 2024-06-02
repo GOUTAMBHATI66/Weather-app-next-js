@@ -13,10 +13,10 @@ import { format, parseISO } from "date-fns";
 import { kelvinToCelsius } from "@/utils/kelvinToCelsius";
 
 interface arrayList {
-  arrayList: string[];
+  arrayList: any[];
 }
 
-export default function RightSideBar({ arrayList }: data) {
+export default function RightSideBar({ arrayList }: arrayList) {
   // Unique date from 3 hours time difference
   const uniqueDates = [
     ...new Set(
@@ -42,7 +42,7 @@ export default function RightSideBar({ arrayList }: data) {
       <SheetTrigger>
         <RiBarChartHorizontalLine
           size={32}
-          className="text-start p-1 hover:rounded-full hover:bg-[#b2bbca] sm:hidden"
+          className="text-start p-1 hover:rounded-full hover:bg-[#b2bbca] sm:hidden "
         />
       </SheetTrigger>
       <SheetContent side={"left"} className="bg-slate-300">

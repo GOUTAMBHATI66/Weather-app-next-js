@@ -109,7 +109,7 @@ export default function Home() {
 
   // console.log(data);
 
-  if (isLoading) {
+  if (isLoading || !data || !data.list || data.list.length === 0) {
     return (
       <div className="flex items-center justify-center h-screen">
         <p className=" animate-bounce">Loading...</p>
